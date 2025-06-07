@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A059E2A1-A829-4FCF-A9E0-459983F3C768}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Accounting.App</RootNamespace>
+    <AssemblyName>Accounting.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a" />
+    <Reference Include="Stimulsoft.Controls.Win, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2014.3\Bin\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Win, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2014.3\Bin\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2014.3\Bin\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft Reports.Ultimate 2014.3\Bin\System.Windows.Controls.Data.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomers.Designer.cs">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmAddOrEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmAddOrEditCustomer.Designer.cs">
+      <DependentUpon>frmAddOrEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\frmNewAccounting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmNewAccounting.Designer.cs">
+      <DependentUpon>frmNewAccounting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinValidator\Validator\BaseValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\BaseValidator.designer.cs">
+      <DependentUpon>BaseValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\CustomValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\CustomValidator.designer.cs">
+      <DependentUpon>CustomValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RangeValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RangeValidator.designer.cs">
+      <DependentUpon>RangeValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RegularExpressionValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RegularExpressionValidator.designer.cs">
+      <DependentUpon>RegularExpressionValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RequiredFieldValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RequiredFieldValidator.designer.cs">
+      <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounting\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomers.resx">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmAddOrEditCustomer.resx">
+      <DependentUpon>frmAddOrEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\frmNewAccounting.resx">
+      <DependentUpon>frmNewAccounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Accounting_DBDataSet.xsc">
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Accounting_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Accounting_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Accounting_DBDataSet.xss">
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4544845-business-comerce-delivery-list-shop_121445.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4544837-business-comerce-delivery-guarante-shop_121437.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3741759-artboard-bussiness-ecommerce-marketplace-onlinestore-store-trolly_108893.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_place_marker_address_location_pin_map_ecommerce_icon_224950.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_profile_user_ecommerce_icon_224942.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3741735-bussiness-ecommerce-marketplace-onlinestore-sotore-store_108894.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag_buy_cart_ecommerce_shop_shopping_store_icon_123227.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecommerce_home_market_mart_shop_shopping_store_icon_123207.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_icon_124050.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\service_help_customer_question_communication_information_support_icon_261681.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman-avatar-with-question-mark_icon-icons.com_68324.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attraction_star_favourite_icon_180184.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attraction_icon_180765.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1492533007-money-magnet_83249.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4124827-ad-advertisement-marketing-mobile-mobile-advertising_113898.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3586357-audio-record-sound-speaker_107952.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_report_calculator_chart_pie_icon_205131.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart-with-a-circle-of-arrows_icon-icons.com_56765.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491253669-6document-report_82892.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_charts_increase_arrow_business_icon_186855.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thefreeforty_target_icon-icons.com_66342 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thefreeforty_target_icon-icons.com_66342.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_success_icon_155483.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office_business_strategy_success_task_icon_190997.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_documents_files_icon_152099.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_icon_152112.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_charts_increase_arrow_business_icon_186855.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491253669-6document-report_82892.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart-with-a-circle-of-arrows_icon-icons.com_56765.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_report_calculator_chart_pie_icon_205131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3586357-audio-record-sound-speaker_107952.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4124827-ad-advertisement-marketing-mobile-mobile-advertising_113898 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4124827-ad-advertisement-marketing-mobile-mobile-advertising_113898.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1492533007-money-magnet_83249.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attraction_icon_180765.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attraction_star_favourite_icon_180184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman-avatar-with-question-mark_icon-icons.com_68324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\service_help_customer_question_communication_information_support_icon_261681.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_icon_124050.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecommerce_home_market_mart_shop_shopping_store_icon_123207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag_buy_cart_ecommerce_shop_shopping_store_icon_123227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3741735-bussiness-ecommerce-marketplace-onlinestore-sotore-store_108894.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_profile_user_ecommerce_icon_224942.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_place_marker_address_location_pin_map_ecommerce_icon_224950.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3741759-artboard-bussiness-ecommerce-marketplace-onlinestore-store-trolly_108893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4544837-business-comerce-delivery-guarante-shop_121437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4544845-business-comerce-delivery-list-shop_121445.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_documents_files_icon_152099.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_calculator_clipboard_notes_icon_188648.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_prohibited_filled_icon_200402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_call_filled_icon_200413.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_edit_filled_icon_200410.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_filled_icon_202016 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_available_filled_icon_200415.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_delete_filled_icon_199757.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_filled_icon_202016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-person-add_89833.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-stalker_icon-icons.com_50076.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486146612-propertyagent002_79450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_User_icon-icons.com_55920.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_File_icon-icons.com_55923.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-social-web-network-internet_176_icon-icons.com_61495.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting.Business\Accounting.Business.csproj">
+      <Project>{241685ce-978e-48a6-888f-6a5c2c22d875}</Project>
+      <Name>Accounting.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj">
+      <Project>{ef747a01-29d0-44c1-a4f6-5616526daed8}</Project>
+      <Name>Accounting.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.Utility\Accounting.Utility.csproj">
+      <Project>{ba8ebe0e-ebe7-429a-9e67-2d1715897417}</Project>
+      <Name>Accounting.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.ViewModels\Accounting.ViewModels.csproj">
+      <Project>{f2d58225-a150-44ab-8280-ed86d4064dd7}</Project>
+      <Name>Accounting.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-with-print-and-paper-sheets_icon-icons.com_56231.png" />
+    <None Include="Resources\textandimagedocument_83677.png" />
+    <None Include="Resources\calendar-and-envelope_icon-icons.com_70272.png" />
+    <None Include="Resources\calendar-and-briefcase_icon-icons.com_70274.png" />
+    <None Include="Resources\caculator-and-book_icon-icons.com_70277.png" />
+    <None Include="Resources\calendar-and-user_icon-icons.com_70271.png" />
+    <None Include="Resources\person_note_filled_icon_202006%281%29.png" />
+    <None Include="Resources\person_note_filled_icon_202006.png" />
+    <None Include="Resources\chart_person_filled_icon_200798.png" />
+    <None Include="Resources\person_note_filled_icon_199756.png" />
+    <None Include="Resources\window_ad_person_filled_icon_200070%281%29.png" />
+    <None Include="Resources\window_ad_person_filled_icon_200070.png" />
+    <None Include="Resources\notepad_person_filled_icon_202046%281%29.png" />
+    <None Include="Resources\notepad_person_filled_icon_202046.png" />
+    <None Include="Resources\document_person_filled_icon_199874.png" />
+    <None Include="Resources\customer_man_avatar_person_people_thinking_about_shopping_shopping_ideas_icon_225089%281%29.png" />
+    <None Include="Resources\customer_man_avatar_person_people_thinking_about_shopping_shopping_ideas_icon_225089.png" />
+    <None Include="Resources\customer_man_avatar_person_people_thinking_about_shopping_shopping_ideas_icon_225119.png" />
+    <None Include="Resources\transaction_cash_flow_dollar_finance_transfer_payment_icon_232617.png" />
+    <None Include="Resources\invoice_transaction_bill_receipt_investment_dollar_icon_188468%281%29.png" />
+    <None Include="Resources\invoice_transaction_bill_receipt_investment_dollar_icon_188468.png" />
+    <None Include="Resources\pay_payment_bill_dollar_cash_icon_143281.png" />
+    <None Include="Resources\pay_cash_bill_money_buy_icon_143287%281%29.png" />
+    <None Include="Resources\pay_cash_bill_money_buy_icon_143287.png" />
+    <None Include="Resources\check_payment_pay_icon_143297.png" />
+    <None Include="Resources\4124841-finance-report-graph-analysis-graph-report-sale-report-stock-report_114127%281%29.png" />
+    <None Include="Resources\4124841-finance-report-graph-analysis-graph-report-sale-report-stock-report_114127.png" />
+    <None Include="Resources\list_statistics_graph_report_icon_220489.png" />
+    <None Include="Resources\analytics_report_analysis_document_data_study_icon_143867%281%29.png" />
+    <None Include="Resources\analytics_report_analysis_document_data_study_icon_143867.png" />
+    <None Include="Resources\4124799-finance-report-graph-analysis-graph-report-sale-report-stock-report_113890%281%29.png" />
+    <None Include="Resources\4124799-finance-report-graph-analysis-graph-report-sale-report-stock-report_113890.png" />
+    <None Include="Resources\fiatmoneycashhandvalueshowbill_95897.png" />
+    <None Include="Resources\money-bag-and-coins_icon-icons.com_56176.png" />
+    <None Include="Resources\hand_money_icon_232218.png" />
+    <None Include="Resources\money_bank_check_payment_cheque_icon_192197%281%29.png" />
+    <None Include="Resources\money_bank_check_payment_cheque_icon_192197.png" />
+    <None Include="Resources\money_cash_payment_earning_salary_income_wages_icon_210499%281%29.png" />
+    <None Include="Resources\money_cash_payment_earning_salary_income_wages_icon_210499.png" />
+    <None Include="Resources\3925398-budget-money-stocks-icon_111548%281%29.png" />
+    <None Include="Resources\3925398-budget-money-stocks-icon_111548.png" />
+    <None Include="Resources\income_money_bag_investment_finance_revenue_profit_dollar_icon_232660%281%29.png" />
+    <None Include="Resources\income_money_bag_investment_finance_revenue_profit_dollar_icon_232660.png" />
+    <None Include="Resources\fiatmoneycashhandvalueshowbill_958971.png" />
+    <None Include="Resources\money-bag-and-coins_icon-icons.com_561761.png" />
+    <None Include="Resources\cash_credit_currency_dollar_finance_money_payment_icon_123204%281%29.png" />
+    <None Include="Resources\editdocument_105148.png" />
+    <None Include="Resources\page_paper_file_document_delete_recycle_bin_icon_228146.png" />
+    <None Include="Resources\editdocument_1051481.png" />
+    <None Include="Resources\page_paper_file_document_write_pencil_icon_228145.png" />
+    <None Include="Resources\page_paper_file_document_clock_loading_history_icon_228123%281%29.png" />
+    <None Include="Resources\page_paper_file_document_icon_228144.png" />
+    <None Include="Resources\calculation_math_computation_arithmetic_figuring_icon_262941%281%29.png" />
+    <None Include="Resources\calculation_math_computation_arithmetic_figuring_icon_262941.png" />
+    <None Include="Resources\4213589-calculate-calculator-doodle-education-line-school-vector_115495.png" />
+    <None Include="Resources\workplace_workspace_desktop_workstation_icon_188678%281%29.png" />
+    <None Include="Resources\workplace_workspace_desktop_workstation_icon_188678.png" />
+    <None Include="Resources\payment_tax_invoice_document_calculator_icon_188684.png" />
+    <Content Include="WinValidator\New Text Document.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
